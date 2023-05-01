@@ -1,8 +1,9 @@
-const notes = require('express').Router();
+const notes = require('express').Router(); 
+const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
 const fs = require('fs');
 
 notes.get('/', (req, res) => {
-    fs.readFile('../db/db.json')
+    readFromFile('../db/db.json').then((data) => res.json(JSON.parse(data)))
 })
 
 notes.post('/', (req, res) => {
