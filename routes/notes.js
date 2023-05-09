@@ -3,7 +3,7 @@ const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
 const fs = require('fs');
 
 notes.get('/', (req, res) => {
-    readFromFile('../db/db.json').then((data) => res.json(JSON.parse(data)))
+    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
 })
 
 notes.post('/', (req, res) => {
@@ -17,7 +17,7 @@ notes.post('/', (req, res) => {
         text,
       };
   
-      readAndAppend(newNote, '../db/db.json');
+      readAndAppend(newNote, './db/db.json');
 
       const response = {
         status: 'success',
