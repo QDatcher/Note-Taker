@@ -20,9 +20,9 @@ app.get('/', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 
-app.get('*', (req, res) =>
-  res.sendFile(path.join(__dirname, 'public/pages/index.html'))
-);
+// app.get('*', (req, res) =>
+//   res.sendFile(path.join(__dirname, '/public/index.html'))
+// );
 
 // GET Route for notes page
 app.get('/notes', (req, res) =>
